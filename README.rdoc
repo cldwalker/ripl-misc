@@ -1,0 +1,2 @@
+== Description
+Playground for ripl plugin ideas
