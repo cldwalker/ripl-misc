@@ -1,11 +1,5 @@
 module Ripl::Options
-  def options
-    @options ||= super << ['-p FILE', 'Require plugin'] <<
-      ['-e ARGS', 'Loads irbrc, executes ruby and quits'] <<
-      ['-l, --local', 'Loads local libraries from lib/'] 
-  end
-
-  def invalid_option(option, argv)
+  def parse_option(option, argv)
     case option
     when /-p=?(.*)/
       require "ripl/" + ($1.empty? ? argv.shift.to_s : $1)
@@ -21,4 +15,8 @@ module Ripl::Options
     end
   end
 end
+
 Ripl::Runner.extend Ripl::Options
+Ripl::Runner.add_options ['-p FILE', 'Require plugin'],
+  ['-e ARGS', 'Loads irbrc, executes ruby and quits'],
+  ['-l, --local', 'Loads local libraries from lib/']
