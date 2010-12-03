@@ -4,7 +4,7 @@ module Ripl::Options
     when /-p=?(.*)/
       require "ripl/" + ($1.empty? ? argv.shift.to_s : $1)
     when '-e'
-      Ripl.shell.before_loop
+      Ripl.shell.before_loop if Ripl.config[:irbrc]
       Ripl.shell.loop_eval(argv.join(" "))
       exit
     when '-l', '--local'
