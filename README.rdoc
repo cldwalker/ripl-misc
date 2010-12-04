@@ -1,2 +1,16 @@
 == Description
-Playground for ripl plugin ideas
+Playground for ripl plugin ideas.
+
+Although this is a playground, most of the ideas here are complete and ready to use as plugins.
+However, since I don't use these plugins actively, I'm not releasing them as gems.
+
+== Install
+
+If you use {rip}[http://github.com/cldwalker/rip] :
+
+    $ rip install git://github.com/cldwalker/ripl-misc.git
+
+    # In your ~/.riplrc require desired plugins
+    require 'ripl/history_size'
+
+If you don't, just copy and paste desired plugins into ~/.riplrc.
