@@ -1,3 +1,4 @@
+require 'ripl'
 # usage: require 'ripl/debugger'; debugger
 module Kernel
   def debugger
