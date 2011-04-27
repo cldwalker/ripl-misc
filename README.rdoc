@@ -13,4 +13,9 @@ If you use {rip}[http://github.com/cldwalker/rip] :
     # In your ~/.riplrc require desired plugins
     require 'ripl/history_size'
 
-If you don't, just copy and paste desired plugins into ~/.riplrc.
+If you don't, just copy and paste desired plugins into ~/.riplrc or:
+
+    $ git clone git://github.com/cldwalker/ripl-misc.git
+    $ cd ripl-misc
+    # To use ripl/plugin
+    $ ripl -Ilib -rripl/plugin
