@@ -30,6 +30,7 @@ class KeyboardHandler < EM::Connection
     print Ripl.shell.prompt
   end
 
+  # TODO: #receive_data and autocompletion
   def xreceive_data(data)
     if data[/\t$/]
       warn "TAB #{data}"
@@ -40,8 +41,8 @@ class KeyboardHandler < EM::Connection
   end
 
   def receive_line(line)
-    # not in latest ripl yet
-    Ripl.shell.input = line
+    # TODO: use accessor
+    Ripl.shell.instance_variable_set :@input, line
     Ripl.shell.loop_once
     print Ripl.shell.prompt
   end
